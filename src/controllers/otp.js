@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const otp = require('../db/otp');
 const bcrypt = require('../middleware/bcrypt');
 

@@ -1,7 +1,5 @@
 const express = require('express');
 const router = new express.Router();
-
-const bcrypt = require('../middleware/bcrypt');
 const otp = require('../controllers/otp');
 
 router.post('/verify',(req,res)=>{
@@ -12,7 +10,7 @@ router.post('/verify',(req,res)=>{
             res.send("OTP Expired. Kindly try to resend it.");
         else if(data==true)
         {
-            otp.remove(req.body.email,(error,dataa)=>{
+            otp.remove(req.body.email,(error,)=>{
                 if(error)
                     res.send(error);
                 else
@@ -32,7 +30,7 @@ router.post('/api/verify',(req,res)=>{
             res.send("Failure");
         else if(data==true)
         {
-            otp.remove(req.body.email,(error,dataa)=>{
+            otp.remove(req.body.email,(error)=>{
                 if(error)
                     res.send(error);
                 else
